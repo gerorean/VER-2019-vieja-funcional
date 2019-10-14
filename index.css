@@ -1,0 +1,731 @@
+/*INICIALIZACION BOTONES VISIBLES CON width: 20%, INVISIBLES CON width:0%*/
+#_alerta_, #_chatComOff, #_chatPrivado, #_chatPrivadoOff, #_contactos, #_contactosOff, 
+#_emergencia, #_enlaces, #_mapa, #_numChatComOff, #_promo
+{
+	width: 0%;
+}
+
+#_alerta, #_chatCom, #_emergenciaOff, #_enlacesOff, #_mapaOff, #_numChatCom, #_promoOff
+{
+	width: 20%;
+}
+
+
+
+
+
+/*GRUPO 1__ CAPAS OCULTAS (4)***********************************************/
+#body
+{
+   	margin: 0;
+   	text-align: center;
+}
+
+#fondo
+{
+   	position: fixed;   	
+   	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#tarima
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#escenario
+{
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 60px);/*ALTURA CONSTANTE*/
+	top: 0px;
+}
+
+
+
+
+
+/*GRUPO 2__ BARRA SUPERIOR (MENU CON 5 BOTONES)*********************************/
+#menu/*SIMILAR A #control GRUPO 8*/
+{
+	position: absolute;
+	width: 100%;
+	height: 60px;/*AMPLIADA:0px  :::  MINIMIZADA:60px*/
+	margin: 0px;
+	overflow: hidden;
+	line-height: 60px;/*ALTURA CUADRO DE TEXTO*/
+}
+
+#_mensajesCom
+{
+	left: 20%;
+	top: 20px;/*ON:20px  :::  OFF:-65px*/
+}
+
+#_mensajesPri
+{
+	left: 40%;
+	top: -65px;/*ON:20px  :::   OFF:-65px*/
+}
+
+
+
+
+
+/*GRUPO 3__ ESCENARIOS (5)**************************************************/
+#escenarios
+{
+	position: absolute;
+	width: 100%;/*98%*/
+	height: calc( 100% - 60px);/*TOMAR = VALOR DE height EN px DEL MENU*/
+	overflow: hidden;/*auto*/
+	top: 60px;/*0*CUANDO ESTA AMPLIADA***************MINIMIZADA*60px*TOMAR = VALOR DE height EN px DEL MENU*/
+}
+
+/*1*/
+#mapa
+{
+	position: relative;
+	height: 0%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    width: 100%;
+    padding: 0px;
+	overflow: hidden;
+	cursor: move;
+	z-index: 0;/*0: SOMBRA ENCIMA DE GOOGLE MAP Y VENTANAS EMERGENTES DE GOOGLE*/
+}
+
+/*2*/
+#chatCom
+{
+	position: relative;
+	height: 100%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    max-width: 1000px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    padding: 0px;
+	overflow: auto;
+}
+
+/*3*/
+#emergencia
+{
+	position: relative;
+	height: 0%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    max-width: 1000px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    padding: 0px;
+	overflow: auto;
+}
+
+#chatPrivado
+{
+	position: relative;
+	height: 0%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    max-width: 1000px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    padding: 0px;
+	overflow: auto;
+}
+
+/*4*/
+#enlaces
+{
+	position: relative;
+	height: 0%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    max-width: 1000px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    padding: 0px;
+	overflow: auto;
+}
+
+#contactos
+{
+	position: relative;
+	height: 0%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    max-width: 1000px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    padding: 0px;
+    overflow: auto;
+}
+
+/*5*/
+#promo
+{
+	position: relative;
+	height: 0%;/*VALOR INICIAL*/
+	margin: 0px auto;
+    max-width: 1000px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    padding: 0px;
+	overflow: auto;
+}
+
+
+
+
+
+/*GRUPO 4__ CAPAS EMERGENTES****************************************************/
+#techo
+{
+	position: absolute;
+	width: 100%;
+	height: 15px;
+	top: 0px;
+}
+
+#prohibido/*BLOQUEA BOTON DE GOOGLE MAP*/
+{
+	position: absolute;/*absolute*/
+	width: 40px;/*40px*/
+	height: 0px;/*VALOR INICIAL*//*ON: 40px ::: OFF: 0px*/
+	right: 10px;/*10px*/
+	top: 10px;/*10px*/
+}
+
+#led1
+{
+	left: calc(10% - 4px);/*VALOR INICIAL*/
+}
+
+#led2
+{
+	left: calc(30% - 4px);/*VALOR INICIAL*/
+	background-color: white;/*VALOR INICIAL*/
+}
+
+#led3A
+{
+	left: calc(50% - 4px);/*VALOR INICIAL*/
+}
+
+#led3B
+{
+	left: -10px;/*VALOR INICIAL*/
+}
+
+#led4A
+{
+	left: calc(70% - 4px);/*VALOR INICIAL*/
+}
+
+#led4B
+{
+	left: -10px;/*VALOR INICIAL*/
+}
+
+#led5
+{
+	left: calc(90% - 4px);/*VALOR INICIAL*/
+}
+
+#_max
+{
+	right: 8px;/*VALOR INICIAL*//*VISIBLE: 8px :::: OCULTO: -60 px*/
+}
+
+
+#_min
+{
+	right: -60px;/*VALOR INICIAL*//*VISIBLE: 8px :::: OCULTO: -60 px*/
+}
+
+#piso
+{
+	position: absolute;/*absolute*/
+	width: 100%;/*0%OFF 100%ON*/
+	height: 15px;/*SOMBRA:15px    :::  CUADRO DE TEXTO INFERIOR:75px*/
+	bottom: 0px;/*SIN MENU:0px :::  CON MENU MINIMIZADA:60px*/
+}
+
+#_texto/***RELACION DIRECTA CON EL CAMBIO DE #piso*/
+{
+	position: relative;/*relative*/
+	height: 40px;/*40*/
+	margin: auto;
+	bottom: 0px;/*VISIBLE:65px OCULTO:0px = CAMBIO DE #piso */
+	width: calc(70% - 90px);
+	border-radius: 5px;
+    max-width: 700px;/*ANCHO MAXIMO DEL CONTENIDO*/
+    overflow: auto;
+}
+
+
+
+
+
+/*GRUPO 5__ BOTONES DE USUARIO*******************************************/
+#blurGafas
+{
+	left:  calc(50% - 90px);/*-2px;/*-65pxOFF -2pxON*/
+}
+
+#_acercar
+{
+	left:  calc(50% - 90px);/*-2px;/*-65pxOFF -2pxON*/
+}
+
+#_alejar
+{
+	left: -65px;/*-65pxOFF -2pxON*/
+}
+
+#blurBarra
+{
+	left: calc(50% + 30px);/*-65pxOFF 50pxON*/
+}
+
+#_ocultar
+{
+	left: calc(50% + 30px);
+}
+
+#_mostrar
+{
+	left: -65px;
+}
+
+#blurCuenta
+{
+	left: calc(50% - 30px); /*calc(50%-30px);/*-65pxOFF 50pxON*/
+}
+
+#_cuenta
+{
+	left: calc(50% - 30px);/*calc(50%-30px);/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+#_usuario
+{
+	left: -65px;/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+
+
+
+
+/*GRUPO 6__ AYUDA EMERGENTE BOTONES OCULTOS SE ACTIVAN DEPENDIENDO DE EVENTOS***************/
+#_arriba
+{
+	right: -65px;/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+#_alertar
+{
+	right: -65px;/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+#_bajar
+{
+	right: -65px;/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+#_enviar
+{
+	right: -65px;/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+#_contactar
+{
+	right: -65px;/*VISIBLE:50px CORRIDA:-65px*/
+}
+
+
+
+
+
+/*GRUPO 7__ CONTROL CON 5 BOTONES INFERIORES**************************************/
+#control/*SIMILAR A #menu GRUPO 2*/
+{
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	bottom: 0px;
+	overflow: hidden;
+	line-height: 60px;/*ALTURA CUADRO DE TEXTO*/
+}
+
+#_cerrar
+{
+	width: 20%;
+}
+
+#_abrir
+{
+	width: 0%;
+}
+
+
+
+
+/*GRUPO 8__ CAPAS ADICIONALES**********************************************/
+#registro
+{
+	position: absolute;
+	width: 100%;
+	height: 0%;/*0*OCULTA****************100*VISIBLE*/
+	overflow: auto;
+	top: 0%;
+}
+
+#asunto
+{
+	position: absolute;
+	width: 100%;
+	height: 60px;/*0*CUANDO ESTA AMPLIADA***************MINIMIZADA*60px*/
+	margin: 0px;
+	overflow: auto;
+}
+
+#contenido
+{
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 60px);/*100**TOMAR = VALOR DE height EN px DEL CONTROL*/
+	overflow: auto;
+	top: 60px;
+}
+
+
+
+
+
+/*CLASES POR ORDEN ALFABETICO******************************************************/
+.accordion/* EFECTO ACORDEON:::::::::::::::::::::::::::::: 1/3 */ 
+{
+  background-color: #003d4d;/*fondo*/
+  color: #ccf5ff;/*color50*/
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover/* EFECTO ACORDEON:::::::::::::: 2/3 */  
+{
+  background-color: #ccf5ff;/*fondo90*/
+  color: #002933;/*color10*/
+}
+
+.ayuda
+{
+	position: absolute;/*absolute*/
+	bottom: -65px;/*15pxON -60pxOFF*/
+	overflow: hidden;
+}
+
+.boton
+{
+	position: relative;
+	width: 20%;/*20*Ancho de los los botones superiores*/
+	height: 100%;/*ALTURA DEL DIV*/
+	float: left;
+    white-space: nowrap;/*UNE ESPACIOS NO USA OTRA FILA*/
+    overflow: hidden;
+    line-height:60px;
+}
+
+._boton
+{
+	position: absolute;/*absolute*/
+	overflow: hidden;
+	width: 50px;/*width + right minimo 50 ancho del boton maximizar de GoogleMap*/
+	height: 50px;/*height + top minimo 50 Para tapar el boton de GoogleMap*/
+	top: 15px;
+}
+
+.click
+{
+	cursor: pointer;
+}
+
+.comodin
+{
+	position: absolute;
+	/*right: 50px;*/
+	bottom: 15px;
+	overflow: hidden;
+}
+
+.flecha
+{
+	cursor: default;
+}
+
+.led
+{
+	position: absolute;/*absolute*/
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+	border: 0.5px solid white;
+	top: 4px;
+}
+
+.mensajes
+{
+	position: absolute;
+	width: 20%;/*20*Ancho de los los botones superiores*/
+	height: 50px;/*ALTURA DEL DIV*/
+	color: yellow;
+	line-height:50px;
+}
+
+.nombreCom
+{
+	position: absolute;
+	width: calc( 100% - 10px);
+	height: 100%;
+	margin-left: 5px;
+	vertical-align: middle;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.panel/* EFECTO ACORDEON:::::::::::::::::::::::::::::::::: 3/3 */ 
+{
+  padding: 0 18px;
+  background-color: #00141a;/*fondo5*/
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.redondo
+{
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+
+.superior
+{
+	position: absolute;/*absolute*/
+	top: 75px;/*OCULTA:-65px VISIBLE:75px   15pxCUANDO ESTA AMPLIADA SIN MENU   CON MENU MINIMIZADA75px*/
+	overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar/**ancho riel*/
+{
+  	/*width: 10px;*/
+  	width: 7px; /*initial;*/
+  	height: 7px;/*10*/
+}
+
+/* Track */
+::-webkit-scrollbar-track/*largo riel*/
+{
+  	/*box-shadow: inset 0 0 5px white; */
+  	border-radius: 7px;
+	background-color: rgba(0, 122, 153, 0.5);/*fondo30*/
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb/*boton*/ 
+{
+  	background: #fff; 
+  	border-radius: 7px;
+}
+
+
+
+
+
+/********************************************AJUSTES DE TEXTO*/
+
+.color10
+{
+	color: #002933;
+}
+
+.color85
+{
+	color: #b3f0ff;
+}
+
+.color100
+{
+	color: white;
+}
+
+.texto15
+{
+	font-size: 15px;/*15px - - - 22px*/
+}
+
+.texto20
+{
+	font-size: 20px;/*20px - - - 30px*/
+}
+
+.texto25
+{
+	font-size: 25px;/*25px - - - 37px*/
+}
+
+.texto30
+{
+	font-size: 30px;/*30px - - - 45px*/
+}
+
+.texto48_60
+{
+	font-size: 48px;
+	line-height:60px;
+}
+
+.sombra10Texto
+{
+ 	text-shadow: 2px 2px 2px #002933,-2px 2px 2px #002933,2px -2px 2px #002933,-2px -2px 2px #002933;
+}
+
+.normal
+{
+   	font-family: 'Roboto', 'Oswald', sans-serif;
+}
+
+.delgada
+{
+   	font-family: 'Oswald', sans-serif;
+}
+
+
+
+
+/*******************************************EFECTOS CROMATICOS*/
+.botonColor10_15
+{
+	background-image: linear-gradient(#002933,#003d4d);
+	color: white;
+	border-radius: 20px 20px 0px 0px;
+}
+
+.botonRojo10_25
+{
+	background-image: linear-gradient(#330000,#800000);
+	color: white;
+	border-radius: 20px 20px 0px 0px;
+}
+
+.botonRojo25_10
+{
+	background-image: linear-gradient(#800000,#330000);
+	color: white;
+	border-radius: 0px 0px 20px 20px;
+}
+
+.botonColor15_10
+{
+	background-image: linear-gradient(#003d4d,#002933);
+	color: white;
+	border-radius: 0px 0px 20px 20px;
+}
+
+.color20A15
+{
+	background-image: radial-gradient(#005266,#003d4d);	
+}
+
+.sombra95
+{
+	-webkit-box-shadow:  0px 0px 3px 3px #e6faff;
+	-moz-box-shadow:  0px 0px 3px 3px #e6faff;
+	box-shadow:  0px 0px 3px 3px #e6faff;
+}
+
+.color10O09B8
+{
+	background-color: rgba(0, 41, 51,0.9);
+	filter: blur(8px);
+  	-webkit-filter: blur(8px);
+}
+
+.color10O05
+{
+	background-color: rgba(0, 41, 51,0.5);/*0.9*/
+	filter: blur(0px);/*2*/
+  	-webkit-filter: blur(0px);/*2*/
+}
+
+
+
+/*********************************************COLORES DE FONDO*/
+.amarillo
+{
+	background-color: yellow;
+}
+
+.blanco
+{
+	background-color: white;
+}
+
+.fondo10
+{
+	background-color: #002933;
+}
+
+.fondo50
+{
+	background-color: #00ccff;
+}
+
+.fondo90
+{
+	background-color: #ccf5ff;
+}
+
+.naranja
+{
+	background-color: orange;
+}
+
+.negro
+{
+	background-color: black;
+}
+
+.rojo25Texto
+{
+	color: #800000;
+}
+
+.rojo25
+{
+	background-color: #800000;
+}
+
+.rojo50
+{
+	background-color: #ff0000;
+}
+
+.rojo75
+{
+	background-color: #ff8080;
+}
+
+.rojo95Texto
+{
+	color: #ffe6e6;
+}
+
+.verde
+{
+	background-color: green;
+}
+
+.violeta
+{
+	background-color: purple;
+}
+
+
+
+
+/******************************************************FIN*/
